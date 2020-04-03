@@ -1,9 +1,9 @@
 ---
-title: "useR used Data Wrangling! It's Super Effective!"
+title: "Data Wrangling in R! It's Super Effective!"
 output: learnr::tutorial
 runtime: shiny_prerendered
-description: "An Introduction to Data Wrangling with dplyr"
-author: Madison Corinha & Catherine Cillua
+subtitle: "An Introduction to Data Wrangling with dplyr"
+author: Madison Corinha & Catherine Ciulla
 ---
 
 ```{r setup, include=FALSE}
@@ -13,6 +13,32 @@ library(tidyverse)
 knitr::opts_chunk$set(echo = FALSE)
 pokemon <- read_csv("pokemon.csv")
 ```
+
+## Introduction
+
+Hello!
+
+In your Data Science journey so far, you've charted new territory in Data Exploration, you've seen the sights in Data Visualization, so what next? 
+
+Put on your cowboy boots and wide-brimmed hats, because we're about to go Data Wranglin'.
+
+
+In this tutorial we will cover some of the basics of Data Wrangling using the `dplyr` function in the `tidyverse` package.
+
+### What is Data Wrangling?
+
+Data Wrangling is the process of gathering, selecting, cleaning, structuring, transforming, and enriching "raw" data to turn it into a format that is more appropriate and convenient to use.
+
+### Data
+
+In this tutorial, we will use the `pokemon.csv` dataset uploaded by Rounak Banik, which you can find [here](https://www.kaggle.com/rounakbanik/pokemon).
+
+The Kaggle page where this dataset was posted described the data as follows:
+
+> This dataset contains information on all 802 Pokemon from all Seven Generations of Pokemon. The information contained in this dataset include Base Stats, Performance against Other Types, Height, Weight, Classification, Egg Steps, Experience Points, Abilities, etc. The information was scraped from http://serebii.net/
+
+
+## 
 
 
 
