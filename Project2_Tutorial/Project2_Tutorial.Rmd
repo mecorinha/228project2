@@ -1,14 +1,24 @@
 ---
-title: "Data Wrangling for the new useR"
+title: "useR used Data Wrangling! It's Super Effective!"
 output: learnr::tutorial
 runtime: shiny_prerendered
-author: Madison Corinha
+description: "An Introduction to Data Wrangling with dplyr"
+author: Madison Corinha & Catherine Cillua
 ---
 
 ```{r setup, include=FALSE}
 library(learnr)
+library(readr)
+library(tidyverse)
 knitr::opts_chunk$set(echo = FALSE)
+pokemon <- read_csv("pokemon.csv")
 ```
+
+
+
+
+
+
 
 
 ## Topic 1
