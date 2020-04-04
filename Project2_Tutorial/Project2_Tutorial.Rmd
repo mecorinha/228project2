@@ -82,34 +82,43 @@ Just like you have to get the cup before you can do anything to it, you have to 
 
 
 
-## select(c)
+## select()
 
-Select() returns to you a subsect of columns. This is helpful for isolating and analyzing specific variables in a dataset. 
+The `select()` function returns to you a subset of columns. In a dataset, the columns represent the *variables*.
+
+This function is helpful for isolating and analyzing specific variables in a dataset. 
 
 ### Practice
 
 
 
-## filter(c)
+## filter()
 
-Filter() returns to you a subsect of rows. This allows you to specify criteria about values in a dataset by filter()ing through them to find which fit what you're looking for. 
+The `filter()` function returns to you a subset of rows. In a dataset, the rows represent the *cases, observations, or individuals*.
 
-Filter() and Select() can be used in conjunction in a single pipeline in order to isolate variables and values. You can also filter() multiple criteria with the "&" symbol.
+This function allows you to specify criteria about values in a dataset by `filter()`ing through them to return only the rows that fit what you're looking for. 
 
-## mutate(c)
+The `filter()` and `select()` functions can be used together in a single pipeline in order to isolate specific variables *and* values. You can also `filter()` multiple criteria with the `&` operator.
 
-Mutate() allows you to create and insert new column variables into a dataset. You can use algebraic math equations to define the new variables (multiplying, dividing, etc.)
+## mutate()
+
+The `mutate()` function allows you to create and insert new columns (variables) into a dataset. 
+
+You can use algebraic math equations to define the new variables (multiplying, dividing, etc.)
 
 ## arrange()
 
-Arrange() organizes the values of a dataframe based on a specific variable. Arrange() sorts in ascending order automatically, but you can use desc() to sort to descending order for any of the variables specified in arrange(). 
+The `arrange()` function organizes the values of a dataframe based on a specific variable. 
+
+`arrange()` sorts in ascending order automatically, but you can use `desc()` to sort in descending order for any of the variables specified in `arrange()`. 
 
 ## summarize() with group_by()
 
-Summarize() and group_by() both let us make calculations and comparisons within the data.
+The `summarize()` and `group_by()` functions let us make calculations and comparisons *within* the data.
 
-Summarize() collapses the values into rows based on specifically defined summary statistics. We do this with median(), mean(), sd(), etc.
-Group_by() 
+The `summarize()` function collapses the values into rows based on defined summary statistics. We can use functions such as `median()`, `mean()`, `sd()`, etc. to specify the summary statistic we want to use. 
+
+The `group_by()` functions  
 
 
 ## slice()
