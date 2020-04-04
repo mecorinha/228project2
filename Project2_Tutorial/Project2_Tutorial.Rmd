@@ -62,6 +62,18 @@ To start, lets use a pretty universal example: Let's make a hypothetical pipelin
   
 The pipeline starts off with grabbing a cup, and when that action is completed, the next action begins - in this case, its filling the cup with water. When the cup is filled with water, the next action happens, and after that, the next action happens. Each step in the pipeline must be completed before starting the next step - you can't fill a cup with water if you haven't grabbed the cup yet. At the end of the pipeline, you have completed the action of drinking water. 
 
+In the following sections, you might come across practice questions like the one shown below. Use this question to practice your knowledge of pipelines.
+```{r practice pipeline question}
+
+question("Fill in the [...] in the pipeline if the goal is to catch a pokemon: 'walk into tall grass' %>%  'encounter wild pokemon' %>% [...] %>% 'capture pokemon' %>%  'pick up Pokeball'",
+         answer("Introduce yourself and shake hands like professional adults"),
+         answer("Complain about the Boston Red Sox trading Mookie Betts"),
+         answer("Throw a Pokeball", correct = TRUE),
+         answer("Contemplate the ethics of taking a creature out of its natural environment and forcing it to fight")
+         )
+
+```
+
 Let's now use an example that's more closely related to what we are going to be using pipelines for in this tutorial. When using a pipeline for data wrangling purposes, it almost always follows the same basic steps. The first step in the pipe is to specify the name of the dataset that you are performing the actions on, then the following steps are the actions you want to perform on that dataset.
 
   - dataset_name %>% action(...) %>% action(...) %>% action(...)
@@ -71,6 +83,7 @@ Just like you have to get the cup before you can do anything to it, you have to 
 
 
 ## select()
+
 
 
 ### Practice
