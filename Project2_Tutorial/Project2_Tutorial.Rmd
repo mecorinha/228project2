@@ -90,6 +90,17 @@ This function is helpful for isolating and analyzing specific variables in a dat
 
 ### Practice
 
+The `select()` function only returns the variables you tell it to return from a dataset.
+
+The original dimensions of the `pokemon` dataset are very large! There are 801 cases (rows) and 41 variables (columns). 
+
+Let's use the `select()` function to only return the english name of the pokemon (`name`), the type of the pokemon (`type1`), and the generation the pokemon first appeared (`generation`):
+```{r}
+pokemon %>% 
+  select(name, type1, generation)
+```
+
+
 
 
 ## filter()
@@ -118,7 +129,7 @@ The `summarize()` and `group_by()` functions let us make calculations and compar
 
 The `summarize()` function collapses the values into rows based on defined summary statistics. We can use functions such as `median()`, `mean()`, `sd()`, etc. to specify the summary statistic we want to use. 
 
-The `group_by()` functions  
+The `group_by()` function 
 
 
 ## slice()
