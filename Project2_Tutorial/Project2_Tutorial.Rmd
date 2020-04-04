@@ -134,10 +134,14 @@ The `group_by()` function
 
 ## slice()
 
+`slice()` allows you to pick rows by their original position in the table (ex. `slice(1:10)` returns rows 1 through 10)
+
 
 
 ## count()
 
+`count()` is the equivalent of `group_by()` + `tally()`
+If data is already grouped, `count()` adds an additional group that is removed afterwards.
 
 
 
