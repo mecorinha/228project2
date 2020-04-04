@@ -181,6 +181,23 @@ The `arrange()` function organizes the values of a dataframe based on a specific
 
 Remember when we pointed out that the `filter()` function didn't change the order of the data? We can fix that by using the `arrange()` function!
 
+Let's use the same code from the first exercise in the `filter()` section, and use `arrange()` to put it in order of greatest to least HP.
+```{r exercise7, exercise = TRUE, exercise.eval = TRUE}
+pokemon %>% 
+  select(name, hp, type1) %>% 
+  filter(hp > 100) %>% 
+  arrange(desc(hp))
+```
+
+Looks like the pokemon Blissey has a crazy high base HP! 
+
+```{r arrange_mc_question}
+question("If I wanted to `arrange()` the data to sort by *least to greatest* attack power, which of the options below would I use?",
+         answer("arrange(attack)", correct = TRUE),
+         answer("arrange(desc(attack))"),
+         answer("arrange(least_to_greatest)")
+         )
+```
 
 
 ## summarize() with group_by()
@@ -190,6 +207,12 @@ The `summarize()` and `group_by()` functions let us make calculations and compar
 The `summarize()` function collapses the values into rows based on defined summary statistics. We can use functions such as `median()`, `mean()`, `sd()`, etc. to specify the summary statistic we want to use. 
 
 The `group_by()` function 
+
+### Practice
+
+```{r}
+# average weight grouped by type?
+```
 
 
 ## slice()
@@ -207,7 +230,8 @@ If data is already grouped, `count()` adds an additional group that is removed a
 ### Practice
 
 ```{r}
-# get count of pokemon in each generation and make a plot out of it!
+# get count of pokemon in each generation and make a plot out of it! 
+# I was thinking a ggplot barplot or line plot just to see the trend of new pokemon introduced per generation
 ```
 
 
