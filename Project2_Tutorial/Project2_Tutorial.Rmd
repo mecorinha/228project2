@@ -63,7 +63,7 @@ To start, lets use a pretty universal example: Let's make a hypothetical pipelin
 The pipeline starts off with grabbing a cup, and when that action is completed, the next action begins - in this case, its filling the cup with water. When the cup is filled with water, the next action happens, and after that, the next action happens. Each step in the pipeline must be completed before starting the next step - you can't fill a cup with water if you haven't grabbed the cup yet. At the end of the pipeline, you have completed the action of drinking water. 
 
 In the following sections, you might come across practice questions like the one shown below. Use this question to practice your knowledge of pipelines.
-```{r practice pipeline question}
+```{r practice_pipeline_question}
 
 question("Fill in the [...] in the pipeline if the goal is to catch a pokemon: 'walk into tall grass' %>%  'encounter wild pokemon' %>% [...] %>% 'capture pokemon' %>%  'pick up Pokeball'",
          answer("Introduce yourself and shake hands like professional adults"),
@@ -95,13 +95,24 @@ The `select()` function only returns the variables you tell it to return from a 
 The original dimensions of the `pokemon` dataset are very large! There are 801 cases (rows) and 41 variables (columns). 
 
 Let's use the `select()` function to only return the english name of the pokemon (`name`), the type of the pokemon (`type1`), and the generation the pokemon first appeared (`generation`):
-```{r}
+```{r Example1, exercise = TRUE, exercise.eval = TRUE}
 pokemon %>% 
   select(name, type1, generation)
 ```
 
 Now you try: 
 
+Use the `select()` function to return the English name of the pokemon (`name`), the type of the pokemon (`type1`), the health of the pokemon (`hp`), and the weight in kilograms (`weight_kg`). Use the "Hint" button if you need help.
+```{r Exercise2, exercise = TRUE, warning=FALSE}
+
+```
+
+```{r Exercise2-hint}
+pokemon %>% 
+  select(name, type1, hp, weight_kg)
+```
+
+Now that you've got the hang of `select()`, let's move on to `filter()`.
 
 ## filter()
 
