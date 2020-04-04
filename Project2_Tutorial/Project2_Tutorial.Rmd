@@ -14,9 +14,9 @@ knitr::opts_chunk$set(echo = FALSE)
 pokemon <- read_csv("pokemon.csv")
 ```
 
-## Introduction
 
-Hello!
+
+# Hello!
 
 In your Data Science journey so far, you've charted new territory in Data Exploration, you've seen the sights in Data Visualization, so what next? 
 
@@ -38,12 +38,72 @@ The Kaggle page where this dataset was posted described the data as follows:
 > This dataset contains information on all 802 Pokemon from all Seven Generations of Pokemon. The information contained in this dataset include Base Stats, Performance against Other Types, Height, Weight, Classification, Egg Steps, Experience Points, Abilities, etc. The information was scraped from http://serebii.net/
 
 
-## 
+## Introduction
+
+### Verb-Named Functions
+
+The functions in the `dplyr` package are named with the verbs that describe the action being performed by the function. 
+
+For example:
+  - The `arrange()` function *arranges* (sorts) the rows of the dataset 
+  - The `select()` function *selects* a subset of variables (columns) from the dataset
+
+For this reason, the `dplyr` package provides a **grammar** of data manipulation.
+
+### Pipelines with %>% 
+
+The verb-named functions in the `dplyr` package aren't meant to only work alone, they can also be used in conjunction with each other in a string of functions called a pipeline. 
+
+In a pipeline, multiple arguments are linked together with the **pipe operator**, ** %>% **. In a pipeline, the arguments at the top (on the left) of the pipe operator are performed first, and then the argument on the bottom (on the right). Multiple arguments can be piped together to create a long string of actions.
+
+To start, lets use a pretty universal example: Let's make a hypothetical pipeline (without code) that would show the process of drinking some water. The pipeline would look something like this:
+
+  - "get cup" %>% "fill cup with water" %>% "bring cup to mouth" %>% "drink the water"
+  
+The pipeline starts off with grabbing a cup, and when that action is completed, the next action begins - in this case, its filling the cup with water. When the cup is filled with water, the next action happens, and after that, the next action happens. Each step in the pipeline must be completed before starting the next step - you can't fill a cup with water if you haven't grabbed the cup yet. At the end of the pipeline, you have completed the action of drinking water. 
+
+Let's now use an example that's more closely related to what we are going to be using pipelines for in this tutorial. When using a pipeline for data wrangling purposes, it almost always follows the same basic steps. The first step in the pipe is to specify the name of the dataset that you are performing the actions on, then the following steps are the actions you want to perform on that dataset.
+
+  - dataset_name %>% action(...) %>% action(...) %>% action(...)
+
+Just like you have to get the cup before you can do anything to it, you have to specify the dataset name before you can do anything to it.
+
+
+
+## select()
+
+
+### Practice
+
+
+## filter()
+
+
+
+## mutate()
+
+
+
+## arrange()
+
+
+
+## summarize() with group_by()
+
+
+
+## slice()
+
+
+
+## count()
 
 
 
 
 
+
+********
 
 
 
