@@ -15,8 +15,7 @@ pokemon <- read_csv("pokemon.csv")
 ```
 
 
-
-# Hello!
+## Welcome!
 
 In your Data Science journey so far, you've charted new territory in Data Exploration, you've seen the sights in Data Visualization, so what next? 
 
@@ -54,7 +53,7 @@ For this reason, the `dplyr` package provides a **grammar** of data manipulation
 
 The verb-named functions in the `dplyr` package aren't meant to only work alone, they can also be used in conjunction with each other in a string of functions called a pipeline. 
 
-In a pipeline, multiple arguments are linked together with the **pipe operator**, ** %>% **. In a pipeline, the arguments at the top (on the left) of the pipe operator are performed first, and then the argument on the bottom (on the right). Multiple arguments can be piped together to create a long string of actions.
+In a pipeline, multiple arguments are linked together with the **pipe operator**, **%>%**. In a pipeline, the arguments at the top (on the left) of the pipe operator are performed first, and then the argument on the bottom (on the right). Multiple arguments can be piped together to create a long string of actions.
 
 To start, lets use a pretty universal example: Let's make a hypothetical pipeline (without code) that would show the process of drinking some water. The pipeline would look something like this:
 
@@ -162,18 +161,27 @@ You can use algebraic math equations to define the new variables (multiplying, d
 
 ### Practice
 
+Pokemon have different values for general attack power and for special attack power. Let's use the `mutate()` function to combine these two values into a new variable called `base_total_offense`.
 
-
-```{r}
-
+```{r exercise6, exercise = TRUE, exercise.eval = TRUE}
+pokemon %>% 
+  mutate(base_total_offense = attack + sp_attack) %>% 
+  select(name, attack, sp_attack, base_total_offense)
 ```
 
+**Note**: notice how we used `select()` *after* we used the `mutate()` function. Why do you think that was necessary? (Hint: you can't fill a cup with water if you haven't grabbed a cup yet!) 
 
 ## arrange()
 
 The `arrange()` function organizes the values of a dataframe based on a specific variable. 
 
 `arrange()` sorts in ascending order automatically, but you can use `desc()` to sort in descending order for any of the variables specified in `arrange()`. 
+
+### Practice
+
+Remember when we pointed out that the `filter()` function didn't change the order of the data? We can fix that by using the `arrange()` function!
+
+
 
 ## summarize() with group_by()
 
@@ -195,6 +203,12 @@ The `group_by()` function
 `count()` is the equivalent of `group_by()` + `tally()`.
 
 If data is already grouped, `count()` adds an additional group that is removed afterwards.
+
+### Practice
+
+```{r}
+# get count of pokemon in each generation and make a plot out of it!
+```
 
 
 
