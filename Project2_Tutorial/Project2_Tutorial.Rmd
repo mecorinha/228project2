@@ -82,27 +82,38 @@ Just like you have to get the cup before you can do anything to it, you have to 
 
 
 
-## select()
+https://github.com/mecorinha/228project2.git
 
 
+
+## select(c)
+
+Select() returns to you a subsect of columns. This is helpful for isolating and analyzing specific variables in a dataset. 
 
 ### Practice
 
 
-## filter()
 
+## filter(c)
 
+Filter() returns to you a subsect of rows. This allows you to specify criteria about values in a dataset by filter()ing through them to find which fit what you're looking for. 
 
-## mutate()
+Filter() and Select() can be used in conjunction in a single pipeline in order to isolate variables and values. You can also filter() multiple criteria with the "&" symbol.
 
+## mutate(c)
 
+Mutate() allows you to create and insert new column variables into a dataset. You can use algebraic math equations to define the new variables (multiplying, dividing, etc.)
 
 ## arrange()
 
-
+Arrange() organizes the values of a dataframe based on a specific variable. Arrange() sorts in ascending order automatically, but you can use desc() to sort to descending order for any of the variables specified in arrange(). 
 
 ## summarize() with group_by()
 
+Summarize() and group_by() both let us make calculations and comparisons within the data.
+
+Summarize() collapses the values into rows based on specifically defined summary statistics. We do this with median(), mean(), sd(), etc.
+Group_by() 
 
 
 ## slice()
@@ -110,6 +121,8 @@ Just like you have to get the cup before you can do anything to it, you have to 
 
 
 ## count()
+
+help
 
 
 
