@@ -92,7 +92,7 @@ This function is helpful for isolating and analyzing specific variables in a dat
 
 The `select()` function only returns the variables you tell it to return from a dataset.
 
-The original dimensions of the `pokemon` dataset are very large! There are 801 cases (rows) and 41 variables (columns). 
+The original dimensions of the `pokemon` dataset are very large! There are 801 cases (rows) and 41 variables (columns)! We don't need the information from all of those variables for the purposes of this tutorial, so let's be sure to use `select()` so we only see the variables we want.
 
 Let's use the `select()` function to only return the english name of the pokemon (`name`), the type of the pokemon (`type1`), and the generation the pokemon first appeared (`generation`):
 ```{r Example1, exercise = TRUE, exercise.eval = TRUE}
@@ -134,7 +134,7 @@ pokemon %>%
 
 It is good to note that filtering for `hp > 100` does NOT organize the results into ascending/descending order!
 
-What if we wanted to `filter()` by a categorical variable like pokemon type (`type1`) instead of a numerical variable like Health points (`hp`)? We can do that! Even better, we can do both at the same time! (Since the `=` operator is used for *assignment*, we use the `==` operator to *test for equality*)
+What if we wanted to `filter()` by a categorical variable like pokemon type (`type1`) instead of a numerical variable like Health points (`hp`)? We can do that! Even better, we can do both at the same time! (Note: Since the `=` operator is used for *assignment*, we use the `==` operator to *test for equality*)
 
 Let's use the same code as before but add another layer to the `filter()` argument: return *only* water type pokemon *that also have* base Health Points greater than 100.
 ```{r exercise4, exercise = TRUE, exercise.eval = TRUE}
@@ -160,6 +160,15 @@ The `mutate()` function allows you to create and insert new columns (variables) 
 
 You can use algebraic math equations to define the new variables (multiplying, dividing, etc.)
 
+### Practice
+
+
+
+```{r}
+
+```
+
+
 ## arrange()
 
 The `arrange()` function organizes the values of a dataframe based on a specific variable. 
@@ -183,7 +192,8 @@ The `group_by()` function
 
 ## count()
 
-`count()` is the equivalent of `group_by()` + `tally()`
+`count()` is the equivalent of `group_by()` + `tally()`.
+
 If data is already grouped, `count()` adds an additional group that is removed afterwards.
 
 
