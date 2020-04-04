@@ -122,6 +122,38 @@ This function allows you to specify criteria about values in a dataset by `filte
 
 The `filter()` and `select()` functions can be used together in a single pipeline in order to isolate specific variables *and* values. You can also `filter()` multiple criteria with the `&` operator.
 
+### Practice
+
+I want to find only the pokemon with really high amounts of base health points (`hp`). Let's `filter()` the dataset to only include pokemon with greater than 100 base HP, and only return the variables for English name (`name`), Health Points (`hp`), and type (`type1`).
+
+```{r exercise3, exercise = TRUE, exercise.eval = TRUE}
+pokemon %>% 
+  select(name, hp, type1) %>% 
+  filter(hp > 100)
+```
+
+It is good to note that filtering for `hp > 100` does NOT organize the results into ascending/descending order!
+
+What if we wanted to `filter()` by a categorical variable like pokemon type (`type1`) instead of a numerical variable like Health points (`hp`)? We can do that! Even better, we can do both at the same time! (Since the `=` operator is used for *assignment*, we use the `==` operator to *test for equality*)
+
+Let's use the same code as before but add another layer to the `filter()` argument: return *only* water type pokemon *that also have* base Health Points greater than 100.
+```{r exercise4, exercise = TRUE, exercise.eval = TRUE}
+pokemon %>% 
+  select(name, hp, type1) %>% 
+  filter(hp > 100 & type1 == "water")
+```
+
+Important to note, again, that the list is NOT in an organized order, it is just in the order they happened to be listed in the original dataset.
+
+This time, re-use the code from above and change it to `filter()` for any pokemon type that you like. 
+If you want it, you can find information about pokemon types [here](https://bulbapedia.bulbagarden.net/wiki/Type).
+
+```{r exercise5, exercise = TRUE, exercise.lines = 5}
+
+```
+
+Hint: If no pokemon show up in the list for your specific type, try changing the number for `hp > ...` to something lower.
+
 ## mutate()
 
 The `mutate()` function allows you to create and insert new columns (variables) into a dataset. 
