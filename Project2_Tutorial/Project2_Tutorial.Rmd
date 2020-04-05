@@ -206,16 +206,40 @@ The `summarize()` and `group_by()` functions let us make calculations and compar
 
 The `summarize()` function collapses the values into rows based on defined summary statistics. We can use functions such as `median()`, `mean()`, `sd()`, etc. to specify the summary statistic we want to use. 
 
-The `group_by()` function 
+The `summarize()` function is *almost always* used in conjunction with the `group_by()` function. 
+
+We can use the `group_by()` function to generate aggregate summary results. It is important to keep in mind that the `group_by()` function does nothing by itself, and thus should never be used at the end of a pipeline!
 
 ### Practice
 
-```{r}
+In this example, we are grouping by pokemon type, so all data about pokemon of the same type will be considered together as a group. With this, we are using `summarize()` to calculate the mean weight (in kg) of all pokemon in each of the different pokemon types. We are then using the `arrange()` function to sort the results in descending order.
+
+```{r exercise8, exercise = TRUE, exercise.eval = TRUE}
 pokemon %>%
   group_by(type1) %>%
-  summarize(mean_weight = mean(weight_kg, na.rm = TRUE))
+  summarize(mean_weight = mean(weight_kg, na.rm = TRUE)) %>% # "na.rm = TRUE" removes all missing values so they don't mess up the calculations! 
+  arrange(desc(mean_weight))
 
 ```
+
+Now you try:
+
+Change this code so that we are calculating average height (`height_m`) grouped by type (`type1`). Use the "hint" button to check your work.
+
+```{r exercise9, exercise = TRUE}
+pokemon %>%
+  group_by(type1) %>%
+  summarize(mean_height = mean(    , na.rm = TRUE)) %>%
+  arrange(desc(   ))
+```
+
+```{r exercise9-hint}
+pokemon %>%
+  group_by(type1) %>%
+  summarize(mean_height = mean(height_m, na.rm = TRUE)) %>%
+  arrange(desc(mean_height))
+```
+
 
 
 ## slice()
@@ -232,12 +256,12 @@ If data is already grouped, `count()` adds an additional group that is removed a
 
 ### Practice
 
-```{r}
-# get count of pokemon in each generation and make a plot out of it! 
-# I was thinking a ggplot barplot or line plot just to see the trend of new pokemon introduced per generation
+Is there a trend in the number of new pokemon introduced in each generation?
 
+```{r exercise10, exercise = TRUE, exercise.eval = TRUE}
 pokemon %>%
-  count(generation, sort = TRUE, name = "n_pokemon_per_gen")
+  count(generation, sort = TRUE, name = "n_pokemon_per_gen") %>% 
+  arrange(generation)
 
 ```
 
