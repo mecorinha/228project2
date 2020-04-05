@@ -222,6 +222,8 @@ pokemon %>%
 
 ```
 
+Fairy, bug, and grass types seem to be the lightest pokemon while steel, ground, and dragon types seem to be the heaviest on average. 
+
 Now you try:
 
 Change this code so that we are calculating average height (`height_m`) grouped by type (`type1`). Use the "hint" button to check your work.
@@ -246,7 +248,21 @@ pokemon %>%
 
 `slice()` allows you to pick rows by their original position in the table (ex. `slice(1:10)` returns rows 1 through 10)
 
+### Practice
 
+So now we've looked at the average weights of pokemon by type. But what about the top heaviest pokemon within those types? You can cut the variables down in order to organize the table to exactly what you're looking for.
+
+Let's say we want to look at the top 15 heaviest dark-type pokemon. Use the `select(`) and `filter()` functions to isolate the variables and values we need (type, name, weight for variables and dark for values). After that, let's arrange the data into descending order and take the top 15 results!
+
+
+```{r exercise11, exercise = TRUE, exercise.eval = TRUE}
+pokemon %>%
+  select(type1, name, weight_kg) %>%
+  filter(type1 == "dark") %>%
+  arrange(desc(weight_kg)) %>%
+  slice(1:15)
+```
+Guzzlord takes the cake as the heaviest dark pokemon, weighing a whopping 888 kg! However after the top 3 heaviest, all the values dip below 100 kg.
 
 ## count()
 
@@ -256,7 +272,10 @@ If data is already grouped, `count()` adds an additional group that is removed a
 
 ### Practice
 
-Is there a trend in the number of new pokemon introduced in each generation?
+So how big are the pokemon generations anyway? Are there some generations with significantly more pokemon than others, and how do the values change between generations? We can explore this with `count()`!
+
+Make sure to name the new variable you create with the `count()` function. 
+Also, to make the table easier to read it is helpful to arrange by generation and keep it in ascending order.
 
 ```{r exercise10, exercise = TRUE, exercise.eval = TRUE}
 pokemon %>%
@@ -265,76 +284,11 @@ pokemon %>%
 
 ```
 
+## Conclusion
+
+So now you know the basics of Data Wrangling with `dplyr`! 
+
+We have no gym badge to give you, but the hexsticker for the `dplyr` package might be a good substitute!
 
 
-
-
-
-
-********
-
-
-
-## Topic 1
-
-### Exercise 
-
-*Here's a simple exercise with an empty code chunk provided for entering the answer.*
-
-Write the R code required to add two plus two:
-
-```{r two-plus-two, exercise=TRUE}
-
-```
-
-### Exercise with Code
-
-*Here's an exercise with some prepopulated code as well as `exercise.lines = 5` to provide a bit more initial room to work.*
-
-Now write a function that adds any two numbers and then call it:
-
-```{r add-function, exercise=TRUE, exercise.lines = 5}
-add <- function() {
-  
-}
-```
-
-## Topic 2
-
-### Exercise with Hint
-
-*Here's an exercise where the chunk is pre-evaulated via the `exercise.eval` option (so the user can see the default output we'd like them to customize). We also add a "hint" to the correct solution via the chunk immediate below labeled `print-limit-hint`.*
-
-Modify the following code to limit the number of rows printed to 5:
-
-```{r print-limit, exercise=TRUE, exercise.eval=TRUE}
-mtcars
-```
-
-```{r print-limit-hint}
-head(mtcars)
-```
-
-### Quiz
-
-*You can include any number of single or multiple choice questions as a quiz. Use the `question` function to define a question and the `quiz` function for grouping multiple questions together.*
-
-Some questions to verify that you understand the purposes of various base and recommended R packages:
-
-```{r quiz}
-quiz(
-  question("Which package contains functions for installing other R packages?",
-    answer("base"),
-    answer("tools"),
-    answer("utils", correct = TRUE),
-    answer("codetools")
-  ),
-  question("Which of the R packages listed below are used to create plots?",
-    answer("lattice", correct = TRUE),
-    answer("tools"),
-    answer("stats"),
-    answer("grid", correct = TRUE)
-  )
-)
-```
-
+We hope you enjoyed this tutorial and had fun looking at pokemon data with us.
