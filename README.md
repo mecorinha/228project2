@@ -1,4 +1,6 @@
 # 228project2
 GitHub repository for project 2 in MATH 228 Intro to Data Science
 
-This is a line from R studio.
+Our project is titled "Data Wrangling in R! It's Super Effective!". 
+
+Please view this project in the learnr interactive format!
